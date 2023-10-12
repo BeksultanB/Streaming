@@ -1,0 +1,22 @@
+{
+  "name": "webrtc-2.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "ffmpeg-static": "^5.2.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "http": "^0.0.1-security",
+    "node-rtsp-stream": "^0.0.9",
+    "node-rtsp-stream-es6": "^1.0.7",
+    "socket.io": "^4.7.2",
+    "ws": "^8.14.2"
+  }
+}
