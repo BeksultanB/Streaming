@@ -23,7 +23,7 @@ app.get('/start_stream/:cameraId', (req, res) => {
         stream[cameraId] = new Stream({
             name: 'name',
             streamUrl: `rtsp://admin:Microret8@80.20.1.${cameraId}:554`,
-            wsPort: `7${cameraId}`,
+            wsPort: `70${cameraId}`,
             ffmpegOptions: {
                 '-stats': '',
                 '-r': 30,
