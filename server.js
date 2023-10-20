@@ -5,6 +5,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 let stream = {};
+const PORT = prompt("Введите порт", 82);
 
 const corsOptions = {
   origin: '*',
@@ -107,6 +108,6 @@ app.post('/get_frame', (req, res) => {
     res.status(500).json({ error: 'Timeout exceeded' }); // Отправляем ответ с ошибкой таймаута
   }, 10000);
 });
-const server = app.listen(81, () => {
-  console.log('Server is running on port 81');
+const server = app.listen(PORT, () => {
+  console.log('Server is running on port' + PORT);
 });
