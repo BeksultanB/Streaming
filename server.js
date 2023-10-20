@@ -1,11 +1,21 @@
 ﻿const Stream = require('node-rtsp-stream');
 const { spawn } = require('child_process');
+const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const app = express();
 let stream = {};
-const PORT = prompt("Введите порт", 82);
+let PORT
+
+try {
+  PORT = fs.readFileSync('PORT.txt', 'utf8');
+  console.log(PORT)
+} catch (err) {
+  console.error('Ошибка чтения файла:', err);
+  PORT = 82
+}
+
 
 const corsOptions = {
   origin: '*',
@@ -109,5 +119,5 @@ app.post('/get_frame', (req, res) => {
   }, 10000);
 });
 const server = app.listen(PORT, () => {
-  console.log('Server is running on port' + PORT);
+  console.log('Server is running on port ' + PORT);
 });
